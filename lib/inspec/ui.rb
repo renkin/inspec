@@ -80,7 +80,7 @@ module Inspec
     #                   High-Level formatting methods
     #=========================================================================#
 
-    def emphasis(str, opts = { print: true })
+    def emphasis(str, opts = { print: false })
       cyan(str, opts)
     end
 
