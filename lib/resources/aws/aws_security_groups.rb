@@ -9,7 +9,7 @@ class AwsSecurityGroups < Inspec.resource(1)
 
     # Verify you have more than the default security group
     describe aws_security_groups do
-      its('entries.count') { should be > 1 }
+      its('count') { should be > 1 }
     end
 EOX
   supports platform: 'aws'

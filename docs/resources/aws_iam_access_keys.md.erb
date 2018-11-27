@@ -166,7 +166,7 @@ The date at which the user was created.
 
 ## Properties
 
-* `access_key_ids`, `entries`
+* `access_key_ids`, `raw_data`
 
 ## Property Examples
 
@@ -178,13 +178,13 @@ Provides a list of all access key IDs matched.
       its('access_key_ids') { should include('AKIA1234567890ABCDEF') }
     end
 
-### entries
+### raw_data
 
 Provides access to the raw results of the query. This can be useful for checking counts and other advanced operations.
 
     # Allow at most 100 access keys on the account
     describe aws_iam_access_keys do
-      its('entries.count') { should be <= 100}
+      its('raw_data') { should be <= 100}
     end
 
 <br>

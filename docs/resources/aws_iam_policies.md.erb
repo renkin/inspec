@@ -44,7 +44,7 @@ As this is the initial release of `aws_iam_policies`, its limited functionality 
 
 ## Properties
 
-* `arns`, `entries`, `policy_names`
+* `arns`, `raw_data`, `policy_names`
 
 <br>
 
@@ -66,13 +66,14 @@ Provides a list of policy arns for all IAM Policies in the AWS account.
       its('arns') { should include('arn:aws:iam::aws:policy/test-policy-1') }
     end
 
-### entries
+### raw_data
 
 Provides access to the raw results of the query. This can be useful for checking counts and other advanced operations.
 
     # Allow at most 100 IAM Policies on the account
+    # Using `'count'` here will also work
     describe aws_iam_policies do
-      its('entries.count') { should be <= 100}
+      its('raw_data.count') { should be <= 100}
     end
 
 <br>

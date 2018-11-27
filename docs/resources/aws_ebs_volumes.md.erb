@@ -52,13 +52,14 @@ This resource currently does not support any filter criteria; it will always fet
 
 ## Properties
 
-### entries
+### raw_data
 
 Provides access to the raw results of the query, which can be treated as an array of hashes. This can be useful for checking counts and other advanced operations.
 
     # Allow at most 100 EBS volumes on the account
+    # Using just `'count'` here will also work
     describe aws_ebs_volumes do
-      its('entries.count') { should be <= 100 }
+      its('raw_data.count') { should be <= 100 }
     end
 
 ### volume_ids
@@ -74,7 +75,7 @@ Provides a list of the volume ids that were found in the query.
 
 ## Matchers
 
-For a full list of available matchers, please visit our [Universal Matchers page](https://www.inspec.io/docs/reference/matchers/). 
+For a full list of available matchers, please visit our [Universal Matchers page](https://www.inspec.io/docs/reference/matchers/).
 
 ### exist
 
@@ -83,4 +84,4 @@ The control will pass if the filter returns at least one result. Use `should_not
     # Verify that at least one EBS volume exists
     describe aws_ebs_volumes do
       it { should exist }
-    end   
+    end

@@ -29,7 +29,7 @@ An `aws_cloudtrail_trails` resource block collects a group of CloudTrail Trails 
 
     # Verify the number of CloudTrail Trails in the AWS account
     describe aws_cloudtrail_trails do
-      its('entries.count') { should cmp 10 }
+      its('count') { should cmp 10 }
     end
 
 <br>
@@ -43,19 +43,20 @@ As this is the initial release of `aws_cloudtrail_trails`, its limited functiona
 <br>
 
 ## Properties
-* `entries`, `names`, `trail_arns`
+* `raw_data`, `names`, `trail_arns`
 
 <br>
 
 ## Property Examples
 
-### entries
+### raw_data
 
 Provides access to the raw results of the query. This can be useful for checking counts and other advanced operations.
 
     # Allow at most 100 CloudTrail Trails on the account
+    # Using `'count'` here will also work
     describe aws_cloudtrail_trails do
-      its('entries.count') { should be <= 100}
+      its('raw_data.count') { should be <= 100}
     end
 
 ### names
