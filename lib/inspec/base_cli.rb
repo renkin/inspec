@@ -102,7 +102,7 @@ module Inspec
       option :color, type: :boolean,
         desc: 'Use colors in output.'
       option :attrs, type: :array,
-        desc: 'Load attributes file (experimental)'
+        desc: 'Load attributes from a YAML file'
       option :create_lockfile, type: :boolean,
         desc: 'Write out a lockfile based on this execution (unless one already exists)'
       option :backend_cache, type: :boolean,

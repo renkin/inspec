@@ -6,7 +6,7 @@ require 'rspec/core/example_group'
 class RSpec::Core::ExampleGroup
   # This DSL method allows us to access the values of attributes within InSpec tests
   def attribute(name)
-    Inspec::AttributeRegistry.find_attribute(name, self.class.metadata[:profile_id]).value
+    Inspec::AttributeRegistry.find_or_define_attribute(name, self.class.metadata[:profile_id]).value
   end
   define_example_method :attribute
 end
