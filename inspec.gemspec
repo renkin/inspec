@@ -24,9 +24,10 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 2.3'
 
+  spec.add_dependency 'train', :git => 'https://github.com/renkin/train.git', :ref => '62d966b3'
   # spec.add_dependency 'train', '~> 1.5', '>= 1.6.3'
   spec.add_dependency 'thor', '~> 0.20'
-  spec.add_dependency 'json', '>= 1.8', '< 3.0'
+  spec.add_dependency 'json_pure', '>= 1.8', '< 3.0'
   spec.add_dependency 'method_source', '~> 0.8'
   spec.add_dependency 'rubyzip', '~> 1.2', '>= 1.2.2'
   spec.add_dependency 'rspec', '~> 3'
